@@ -30,7 +30,7 @@ namespace YL.NetCore.NetCoreApp
     public class BaseController : Controller
     {
         private IMemoryCache _memory;
-        private IConfiguration _configuration;
+        private IConfiguration _configuration; 
         public string AppRoot { get { return CreateService<IHostingEnvironment>().ContentRootPath; } }
 
         public string WebRoot { get { return CreateService<IHostingEnvironment>().WebRootPath; } }
@@ -86,7 +86,7 @@ namespace YL.NetCore.NetCoreApp
                     var sys = new SysUserDto
                     {
                         UserId = claims.SingleOrDefault(c => c.Type == ClaimTypes.Sid).Value.ToInt64(),
-                        UserName = claims.SingleOrDefault(c => c.Type == ClaimTypes.Surname).Value,
+                        UserName = claims.SingleOrDefault(c => c.Type == ClaimTypes.Surname).Value, 
                         UserNickname = claims.SingleOrDefault(c => c.Type == ClaimTypes.Name).Value,
                         RoleId = claims.SingleOrDefault(c => c.Type == ClaimTypes.Role).Value.ToInt64(),
                         HeadImg = claims.SingleOrDefault(c => c.Type == ClaimTypes.Uri).Value
