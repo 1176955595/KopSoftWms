@@ -64,7 +64,7 @@ namespace KopSoftWms.Controllers
                 //string msg = results.Errors.Aggregate("", (current, item) => current + (item.ErrorMessage + "</br>"));
                 string msg = results.Errors.Aggregate("", (current, item) => (current + item.ErrorMessage + "</br>"));
                 return BootJsonH((PubEnum.Failed.ToInt32(), msg));
-            }
+            } 
             if (id.IsEmptyZero())
             {
                 if (_dictServices.IsAny(c => c.DictName == dict.DictName))
