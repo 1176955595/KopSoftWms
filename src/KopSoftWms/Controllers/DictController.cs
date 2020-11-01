@@ -69,7 +69,7 @@ namespace KopSoftWms.Controllers
             {
                 if (_dictServices.IsAny(c => c.DictName == dict.DictName))
                 {
-                    return BootJsonH((false, PubConst.Dict1));
+                    return BootJsonH((false, PubConst.Dict1)); 
                 }
                 dict.DictId = PubId.SnowflakeId;
                 dict.CreateBy = UserDtoCache.UserId;
