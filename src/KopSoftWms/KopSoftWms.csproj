@@ -5,6 +5,7 @@
     <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
     <LangVersion>7.1</LangVersion>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>8b094f0a-d2e0-4372-ad22-5f0d4b654407</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
