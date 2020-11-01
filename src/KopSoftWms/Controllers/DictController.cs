@@ -57,7 +57,7 @@ namespace KopSoftWms.Controllers
         public IActionResult AddOrUpdate([FromForm]Sys_dict dict, [FromForm]string id)
         {
             var validator = new SysDictFluent();
-            var results = validator.Validate(dict);
+            var results = validator.Validate(dict);  
             var success = results.IsValid;
             if (!success)
             {
