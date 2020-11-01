@@ -58,7 +58,7 @@ namespace KopSoftWms.Controllers
         {
             var validator = new SysDictFluent();
             var results = validator.Validate(dict);  
-            var success = results.IsValid;
+            var success = results.IsValid; 
             if (!success)
             {
                 //string msg = results.Errors.Aggregate("", (current, item) => current + (item.ErrorMessage + "</br>"));
