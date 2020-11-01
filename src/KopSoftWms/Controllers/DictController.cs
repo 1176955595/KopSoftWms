@@ -88,7 +88,7 @@ namespace KopSoftWms.Controllers
 
         [HttpGet]
         [OperationLog(LogType.delete)]
-        public IActionResult Delete(string id)
+        public IActionResult Delete(string id) 
         {
             var flag = _dictServices.Update(new Sys_dict { DictId = SqlFunc.ToInt64(id), IsDel = 0, ModifiedBy = UserDtoCache.UserId, ModifiedDate = DateTimeExt.DateTime }, c => new { c.IsDel, c.ModifiedBy, c.ModifiedDate });
             return BootJsonH(flag ? (flag, PubConst.Delete1) : (flag, PubConst.Delete2));
