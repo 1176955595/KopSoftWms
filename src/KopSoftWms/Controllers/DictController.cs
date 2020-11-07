@@ -57,14 +57,14 @@ namespace KopSoftWms.Controllers
         public IActionResult AddOrUpdate([FromForm]Sys_dict dict, [FromForm]string id)
         {
             var validator = new SysDictFluent();
-            var results = validator.Validate(dict);
-            var success = results.IsValid;
-            if (!success)
+            var results = validator.Validate(dict);  
+            var success = results.IsValid; 
+            if (!success) 
             {
                 //string msg = results.Errors.Aggregate("", (current, item) => current + (item.ErrorMessage + "</br>"));
                 string msg = results.Errors.Aggregate("", (current, item) => (current + item.ErrorMessage + "</br>"));
                 return BootJsonH((PubEnum.Failed.ToInt32(), msg));
-            }
+            } 
             if (id.IsEmptyZero())
             {
                 if (_dictServices.IsAny(c => c.DictName == dict.DictName))
@@ -88,7 +88,7 @@ namespace KopSoftWms.Controllers
 
         [HttpGet]
         [OperationLog(LogType.delete)]
-        public IActionResult Delete(string id)
+        public IActionResult Delete(string id) 
         {
             var flag = _dictServices.Update(new Sys_dict { DictId = SqlFunc.ToInt64(id), IsDel = 0, ModifiedBy = UserDtoCache.UserId, ModifiedDate = DateTimeExt.DateTime }, c => new { c.IsDel, c.ModifiedBy, c.ModifiedDate });
             return BootJsonH(flag ? (flag, PubConst.Delete1) : (flag, PubConst.Delete2));
