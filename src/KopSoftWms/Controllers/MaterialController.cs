@@ -11,7 +11,7 @@ using YL.Utils.Files;
 using YL.Utils.Pub;
 using YL.Utils.Security;
 using YL.Utils.Table;
-
+//基础资料-物料管理
 namespace KopSoftWms.Controllers
 {
     public class MaterialController : BaseController
